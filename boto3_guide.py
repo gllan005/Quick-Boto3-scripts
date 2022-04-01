@@ -31,9 +31,17 @@ s3_resource = boto3.resource('s3')
 first_bucket_name, first_response = create_bucket(bucket_prefix='gabefirstpythonbuckettt',
                                                   s3_connection=s3_resource.meta.client)
 
+s3_resource = boto3.resource('s3')
+second_bucket_name, second_response = create_bucket(bucket_prefix='gabefirstpythonbuckettt',
+                                                  s3_connection=s3_resource)
+#first bucket and response with client
 print("bucket name: ", first_bucket_name)
 print("response: ", first_response)
-# gabefirstpythonbucketttc42d75b9-4c74-40bd-a488-7eea2e28cf04 us-east-1
+
+#second bucket and response without client
+print("bucket name: ", first_bucket_name)
+print("response: ", first_response)
+
 
 
 ###################### NOTES ##########################
